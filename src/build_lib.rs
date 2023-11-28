@@ -158,7 +158,7 @@ fn copy_dir_all(src: &Path, dst: &Path) -> io::Result<()> {
         }
         for entry in fs::read_dir(src)? {
             let entry = entry?;
-            let file_type = entry.file_type()?;
+            // let file_type = entry.file_type()?;
             copy_dir_all(&entry.path(), &dst.join(entry.file_name()))?;
         }
     } else {
