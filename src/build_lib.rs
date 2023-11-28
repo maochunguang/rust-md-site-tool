@@ -133,6 +133,7 @@ fn transform_path(original: &Path, source_dir:&str, target_dir:&str) -> PathBuf 
     new_path
 }
 
+//读取所有md文件
 fn read_dir_recursive(dir: &Path) -> io::Result<Vec<PathBuf>> {
     let mut files = Vec::new();
     if dir.is_dir() {

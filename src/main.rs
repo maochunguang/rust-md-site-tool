@@ -1,11 +1,7 @@
-use clap::{Command, Arg};
-use std::io::{self};
+use clap::Command;
 mod build_lib;
 mod server_lib;
 mod init_lib;
-// use build_lib;
-// use server_lib;
-// use init_lib;
 
 fn main() {
     let matches = Command::new("rust-md-blog-tool")
@@ -27,19 +23,4 @@ fn main() {
         _ => println!("Invalid command or no command provided"),
     }
 }
-
-// fn init_command() {
-//     println!("Initializing blog...");
-//     // 实现 init 命令的逻辑
-// }
-
-// fn build_command() {
-//     println!("Building site...");
-//     // 实现 build 命令的逻辑
-// }
-
-// fn run_command() {
-//     println!("Running local server...");
-//     // 实现 run 命令的逻辑
-// }
 
