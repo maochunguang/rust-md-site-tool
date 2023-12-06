@@ -232,4 +232,13 @@ pub fn run_command() {
 这里需要注意的是，直接返回html会中文乱码，所以统一都加了`Content-Type", "text/html; charset=utf-8`。
 
 ## 第六步，展示成果
+新建一个用于测试的博客目录：
+1. 在博客工具目录执行`cargo run`生成执行的命令文件;
+2. 复制博客工具命令，`cp target/debug/rust_md_site_tool ~/.cargo/bin`;
+3. 执行 `rust_md_site_tool init`初始化博客；
+4. 在docs目录新建`summary.md`和`index.md`，并在summary里创建好测试的md文档和链接;
+5. `rust_md_site_tool build`构建目录;
+6. 打开浏览器 http://localhost:9900/ ;可以访问index.html;
+
+
 ![Alt text](blog-pic.png)
