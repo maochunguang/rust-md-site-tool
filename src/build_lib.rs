@@ -10,6 +10,7 @@ pub fn build_command() {
     let parsed_config = config.parse::<Value>().expect("Unable to parse config");
     let source_dir =  parsed_config.get("md_source_dir").and_then(Value::as_str).unwrap_or("docs");
     let output_dir =  parsed_config.get("output_dir").and_then(Value::as_str).unwrap_or(".site");
+    let static_dir =  parsed_config.get("static_dir").and_then(Value::as_str).unwrap_or("static");
     let default_css_header =  parsed_config.get("default_css_header").and_then(Value::as_str).unwrap_or("");
     let default_code_header =  parsed_config.get("default_code_header").and_then(Value::as_str).unwrap_or("");
     let default_code_plugin =  parsed_config.get("default_code_plugin").and_then(Value::as_str).unwrap_or("");
@@ -60,8 +61,8 @@ pub fn build_command() {
 
     // ... 复制静态资源 ...
     // 定义静态资源目录和目标目录
-    let static_dir = Path::new("static");
-    let output_dir = Path::new(".site");
+    let static_dir = Path::new(static_dir);
+    let output_dir = Path::new(output_dir);
 
     // 复制静态资源
     if static_dir.exists() {

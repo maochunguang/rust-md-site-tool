@@ -7,6 +7,7 @@ title = "My Blog"
 author = "Your Name"
 description = "This is my blog."
 port = 9900
+static_dir = "static"
 md_source_dir = "docs"
 output_dir = ".site"
 default_css_header = "<link rel=\"stylesheet\" href=\"./css/style.css\">"
